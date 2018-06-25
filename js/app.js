@@ -26,11 +26,9 @@ class Enemy {
     if (this.x >= 499) {
       this.x = 10;
     };
-
-
   };
 
-//Draw the enemies to the screen
+// Draw the enemies to the screen
 
   render(dt) {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
@@ -71,7 +69,7 @@ class Player {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
   };
 
-//Move the player based on user keyboard input
+// Move the player based on user keyboard input
 
   handleInput(directionInput) {
     switch(directionInput) {
@@ -96,11 +94,12 @@ class Player {
 
 // Stop the enemies
 
-      allEnemies.forEach(function(enemy){
-        enemy.speed = 0;
-      });
+        allEnemies.forEach(function(enemy){
+          enemy.speed = 0;
+        });
 
       setTimeout(function () {
+
 // Creating the modal after the game is won
 
         const modalBackground = document.createElement('div');
@@ -167,6 +166,7 @@ const allEnemies =[enemyOne, enemyTwo, enemyThree, enemyFour, enemyfive];
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
+
 document.addEventListener('keyup', function(e) {
     var allowedKeys = {
         37: 'left',
@@ -177,9 +177,9 @@ document.addEventListener('keyup', function(e) {
 
     // Prevent user input after the game is won;
 
-        if (player.y <= 20) {
-          allowedKeys = {};
-        }
-        
+    if (player.y <= 20) {
+      allowedKeys = {};
+    }
+
     player.handleInput(allowedKeys[e.keyCode]);
 });
