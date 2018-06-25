@@ -133,17 +133,17 @@ class Player {
 
 // Contain player movement within the game board;
 
-        if (this.x <= 10) {
-          this.x = -10;
-        }
+    if (this.x <= 10) {
+      this.x = -10;
+    }
 
-        if (this.y >= 400) {
-          this.y = 400;
-        }
+    if (this.y >= 400) {
+      this.y = 400;
+    }
 
-        if (this.x >= 410) {
-          this.x = 410;
-        }
+    if (this.x >= 410) {
+      this.x = 410;
+    }
 
   };
 
