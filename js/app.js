@@ -175,5 +175,11 @@ document.addEventListener('keyup', function(e) {
         40: 'down'
     };
 
+    // Prevent user input after the game is won;
+
+        if (player.y <= 20) {
+          allowedKeys = {};
+        }
+        
     player.handleInput(allowedKeys[e.keyCode]);
 });
