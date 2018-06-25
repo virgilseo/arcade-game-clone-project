@@ -94,9 +94,9 @@ class Player {
 
 // Stop the enemies
 
-        allEnemies.forEach(function(enemy){
-          enemy.speed = 0;
-        });
+      allEnemies.forEach(function(enemy){
+        enemy.speed = 0;
+      });
 
       setTimeout(function () {
 
@@ -168,7 +168,7 @@ const allEnemies =[enemyOne, enemyTwo, enemyThree, enemyFour, enemyfive];
 // Player.handleInput() method. You don't need to modify this.
 
 document.addEventListener('keyup', function(e) {
-    var allowedKeys = {
+    let allowedKeys = {
         37: 'left',
         38: 'up',
         39: 'right',
