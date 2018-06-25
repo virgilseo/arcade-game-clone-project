@@ -2,7 +2,7 @@
 
 class Enemy {
   constructor(x, y, speed){
-    
+
 // Variables applied to each of our instances go here,
 // we've provided one for you to get started
 
@@ -54,6 +54,101 @@ class Enemy {
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
+
+class Player {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    this.width = 50;
+    this.height = 50;
+
+    this.sprite ='images/char-boy.png'
+  };
+
+// Draw the player on the screen
+
+  render() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+  };
+
+//Move the player based on user keyboard input
+
+  handleInput(directionInput) {
+    switch(directionInput) {
+    case "left": this.update(this.x -= 70);
+    break;
+
+    case "right": this.update(this.x += 70);
+    break;
+
+    case "up": this.update(this.y -= 70);
+    break;
+
+    case "down": this.update(this.y += 70);
+    break;
+   };
+
+
+// Checking if the game is won
+
+    if (this.y <= 20)  {
+      this.y = -20;
+
+// Stop the enemies
+
+      allEnemies.forEach(function(enemy){
+        enemy.speed = 0;
+      });
+
+      setTimeout(function () {
+// Creating the modal after the game is won
+
+        const modalBackground = document.createElement('div');
+        const modal = document.createElement('div');
+        const paragraph = document.createElement('span');
+        const replayBtn = document.createElement('button');
+
+        document.body.appendChild(modalBackground);
+        modalBackground.appendChild(modal);
+        modal.appendChild(paragraph);
+        modal.appendChild(replayBtn);
+
+        paragraph.textContent = "You Have Won The Game!!!";
+        replayBtn.textContent = "Play Again?"
+
+        modalBackground.className = "modal-background";
+        modal.className = "modal";
+        replayBtn.className = "replay-btn"
+
+// Adding event listener for the replay button
+
+        replayBtn.addEventListener("click", function() {
+          window.location.reload();
+        });
+
+      }, 1000);
+    }
+};
+
+  update() {
+
+// Contain player movement within the game board;
+
+        if (this.x <= 10) {
+          this.x = -10;
+        }
+
+        if (this.y >= 400) {
+          this.y = 400;
+        }
+
+        if (this.x >= 410) {
+          this.x = 410;
+        }
+
+  };
+
+};
 
 
 // Now instantiate your objects.
