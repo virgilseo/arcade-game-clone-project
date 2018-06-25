@@ -157,10 +157,10 @@ class Player {
 const player = new Player(200, 400);
 
 const enemyOne = new Enemy(10, 60, 130);
-const enemyTwo = new Enemy(200, 160, 80);
-const enemyThree = new Enemy(300, 260, 70);
+const enemyTwo = new Enemy(200, 144, 80);
+const enemyThree = new Enemy(300, 230, 70);
 const enemyFour = new Enemy(300, 60, 90);
-const enemyfive  = new Enemy(50, 260, 160);
+const enemyfive  = new Enemy(50, 230, 160);
 
 const allEnemies =[enemyOne, enemyTwo, enemyThree, enemyFour, enemyfive];
 
