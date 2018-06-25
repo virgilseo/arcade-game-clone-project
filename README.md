@@ -9,7 +9,7 @@ A modern day variation of the classic arcade game named Frogger.
 
 ## Instructions
 
-In this game you have a Player and Enemies. The purpose of the gamer is to reach the water, without colliding into any one of the enemies. The player can move left, right, up and down using his keyboard. The enemies move in varying speeds on the paved block portion of the scene.
+In this game you have the player and the enemy entities. The purpose of the player is to reach the water, without colliding into any one of the enemies. The player can move left, right, up and down using his keyboard. The enemies move in varying speeds on the paved block portion of the scene and the player must avoid hitting them. 
 
 When a collision between the player and enemies does happen, the game restarts and the player is moved back to his initial position.
 
