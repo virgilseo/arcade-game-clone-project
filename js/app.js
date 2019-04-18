@@ -42,7 +42,8 @@ class Enemy {
 
 // Restart the game when a collision does happen
 
-        window.location.reload();
+        player.y = 400;
+        player.x = 200;
 
       }
   };
