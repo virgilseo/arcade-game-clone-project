@@ -104,16 +104,13 @@ class Player {
 
         const modalBackground = document.createElement('div');
         const modal = document.createElement('div');
-        const paragraph = document.createElement('span');
         const replayBtn = document.createElement('button');
 
         document.body.appendChild(modalBackground);
         modalBackground.appendChild(modal);
-        modal.appendChild(paragraph);
         modal.appendChild(replayBtn);
 
-        paragraph.textContent = "You Have Won The Game!!!";
-        replayBtn.textContent = "Play Again?"
+        replayBtn.textContent = "Replay"
 
         modalBackground.className = "modal-background";
         modal.className = "modal";
